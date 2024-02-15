@@ -1,11 +1,18 @@
 import { Bio } from "./Bio";
-import Meals, { List } from "./Meals";
+import Meals from "./Meals";
+
 
 function App() {
+  const bioData = {
+    name: "Jeremy Robinson",
+    birthPlace: "Laarne",
+    yearOfBirth: 1999,
+  };
+
   return (
     <article>
-      <h2>Hi, I am {name}</h2>
-      <Bio />
+      <h2>Hi, I am {bioData.name}</h2>
+      <Bio birthPlace={bioData.birthPlace} yearOfBirth={bioData.yearOfBirth} />
       <Meals />
     </article>
   );

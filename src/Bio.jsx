@@ -1,19 +1,14 @@
-export const Bio = () => {
-  const bioData = {
-    birthPlace: "Laarne",
-    yearOfBirth: 1999,
-  };
-
+export const Bio = (props) => {
   return (
     <p
       style={{
-        color: "darkblue",
-        backgroundColor: "orange",
+        color: "darkgrey",
+        backgroundColor: "paleturquoise",
         fontWeight: "bold",
-        padding: "1rem",
+        padding: "0.3rem",
       }}
     >
-      I was born in {bioData.yearOfBirth} and I live in {bioData.birthPlace}
+      I was born in {props.yearOfBirth} and I live in {props.birthPlace}
     </p>
   );
 };
