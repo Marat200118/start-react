@@ -5,10 +5,17 @@ const Meals = () => (
   </section>
 );
 
-const Meal = (props) => (
+// const Meal = (props) => (
+//   <li className="meal" style={listStyling}>
+//     <span>{props.emoji}</span>
+//     <span>{props.name}</span>
+//   </li>
+// );
+
+const Meal = ({ emoji, name }) => (
   <li className="meal" style={listStyling}>
-    <span>{props.emoji}</span>
-    <span>{props.name}</span>
+    <span>{emoji}</span>
+    <span>{name}</span>
   </li>
 );
 

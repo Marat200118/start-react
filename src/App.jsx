@@ -9,6 +9,8 @@ function App() {
     yearOfBirth: 1999,
   };
 
+  const { name, birthPlace, yearOfBirth } = bioData;
+
   return (
     <article>
       <h2>Hi, I am {bioData.name}</h2>
