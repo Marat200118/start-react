@@ -1,9 +1,9 @@
 import PropTypes from "prop-types";
 
-const Meals = ({ showEmoji }) => (
+const Meals = ({ showEmoji, food }) => (
   <section>
     <h3>My favourite meals</h3>
-     <List showEmoji={showEmoji} />
+    <List showEmoji={showEmoji} food={food} />
   </section>
 );
 
@@ -16,10 +16,11 @@ const Meals = ({ showEmoji }) => (
 
 const Meal = ({ emoji, name, showEmoji }) => (
   <li className="meal" style={listStyling}>
-    {showEmoji ? <span>{emoji}</span> : null}
+    {showEmoji && <span>{emoji}</span>}
     <span>{name}</span>
   </li>
 );
+
 
 const listStyling = {
   display: 'flex',
@@ -29,11 +30,11 @@ const listStyling = {
   listStyle: 'none',
 };
 
-export const List = ({ showEmoji }) => (
+export const List = ({ showEmoji, food }) => (
   <ul>
-    <Meal emoji={"🍝"} name="Spaghetti" showEmoji={showEmoji} />
-    <Meal emoji={"🍟"} name="French fries" showEmoji={showEmoji} />
-    <Meal emoji={"🍗"} name="Roasted chicken" showEmoji={showEmoji} />
+    {food.map(({ emoji, name }) => (
+      <Meal emoji={emoji} name={name} key={name} showEmoji={showEmoji} />
+    ))}
   </ul>
 );
 

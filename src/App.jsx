@@ -11,11 +11,18 @@ function App() {
 
   const { name, birthPlace, yearOfBirth } = bioData;
 
+  const favouriteFood = [
+    { name: "Pizza", emoji: "🍕" },
+    { name: "Hamburger", emoji: "🍔" },
+    { name: "Hotdog", emoji: "🌭" },
+    { name: "Taco", emoji: "🌮" },
+  ];
+
   return (
     <article>
-      <h2>Hi, I am {bioData.name}</h2>
-      <Bio birthPlace={bioData.birthPlace} yearOfBirth={bioData.yearOfBirth} />
-      <Meals showEmoji={true} />
+      <h2>Hi, I am {name}</h2>
+      <Bio birthPlace={birthPlace} yearOfBirth={yearOfBirth} />
+      <Meals showEmoji={true} food={favouriteFood}/>
     </article>
   );
 }
