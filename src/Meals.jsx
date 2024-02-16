@@ -1,7 +1,9 @@
-const Meals = () => (
+import PropTypes from "prop-types";
+
+const Meals = ({ showEmoji }) => (
   <section>
     <h3>My favourite meals</h3>
-    <List />
+     <List showEmoji={showEmoji} />
   </section>
 );
 
@@ -12,9 +14,9 @@ const Meals = () => (
 //   </li>
 // );
 
-const Meal = ({ emoji, name }) => (
+const Meal = ({ emoji, name, showEmoji }) => (
   <li className="meal" style={listStyling}>
-    <span>{emoji}</span>
+    {showEmoji ? <span>{emoji}</span> : null}
     <span>{name}</span>
   </li>
 );
@@ -27,12 +29,26 @@ const listStyling = {
   listStyle: 'none',
 };
 
-export const List = () => (
+export const List = ({ showEmoji }) => (
   <ul>
-    <Meal emoji={"🍝"} name="Spaghetti" />
-    <Meal emoji={"🍟"} name="French fries" />
-    <Meal emoji={"🍗"} name="Roasted chicken" />
+    <Meal emoji={"🍝"} name="Spaghetti" showEmoji={showEmoji} />
+    <Meal emoji={"🍟"} name="French fries" showEmoji={showEmoji} />
+    <Meal emoji={"🍗"} name="Roasted chicken" showEmoji={showEmoji} />
   </ul>
 );
+
+Meal.propTypes = {
+  emoji: PropTypes.string.isRequired,
+  name: PropTypes.string.isRequired,
+  showEmoji: PropTypes.bool.isRequired,
+};
+
+List.propTypes = {
+  showEmoji: PropTypes.bool.isRequired,
+};
+
+Meals.propTypes = {
+  showEmoji: PropTypes.bool.isRequired,
+};
 
 export default Meals;

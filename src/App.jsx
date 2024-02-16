@@ -15,7 +15,7 @@ function App() {
     <article>
       <h2>Hi, I am {bioData.name}</h2>
       <Bio birthPlace={bioData.birthPlace} yearOfBirth={bioData.yearOfBirth} />
-      <Meals />
+      <Meals showEmoji={true} />
     </article>
   );
 }
