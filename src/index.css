@@ -44,3 +44,18 @@ body {
     background-color: #f9f9f9;
   }
 }
+
+article {
+  text-align: left;
+}
+
+.flex-block {
+  display: flex;
+  gap: 1rem;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.description {
+  max-width: 70ch;
+}
