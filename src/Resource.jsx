@@ -10,8 +10,8 @@ const Resource = ({ resource, link, tags }) => {
       <h2>
         <a href={link}>{resource.name}</a>
       </h2>
-      <div class="flex-block">
-        <p class="description">{removeHtml(resource.description)}</p>
+      <div className="flex-block">
+        <p className="description">{removeHtml(resource.description)}</p>
         <Tags tags={tags} />
       </div>
     </article>

@@ -35,6 +35,7 @@
 import Resource from "./Resource";
 import { seattle } from "./seattle";
 
+
 function App() {
   return (
     <>
