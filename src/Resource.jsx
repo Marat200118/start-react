@@ -4,7 +4,7 @@ import PropTypes from "prop-types";
 const Resource = ({ resource, link, tags }) => {
   const removeHtml = (originalString) =>
     originalString.replace(/(<([^>]+)>)/gi, "");
-
+    
   return (
     <article>
       <h2>

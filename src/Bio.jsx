@@ -30,3 +30,4 @@ export const Bio = ({ yearOfBirth, birthPlace }) => {
     </p>
   );
 };
+
